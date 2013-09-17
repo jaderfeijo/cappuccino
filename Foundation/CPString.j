@@ -906,6 +906,22 @@ var CPStringNull = [CPNull null];
     return [[CPURL URLWithString:self] absoluteString];
 }
 
+/*!
+    Returns a representation of the receiver encoded as a legal URL string
+*/
+- (CPString)stringByAddingPercentEscapes
+{
+    return encodeURIComponent(self);
+}
+
+/*!
+    Returns a new string made by replacing in the receiver all percent escapes with their matching characters
+*/
+- (CPString)stringByReplacingPercentEscapes
+{
+    return decodeURIComponent(self);
+}
+
 @end
 
 
